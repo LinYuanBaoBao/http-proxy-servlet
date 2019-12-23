@@ -6,6 +6,15 @@ Http-Proxy-Servlet 能提供流量转发功能，并且支持 HTTPS 双向认证
 
 ## 快速上手
 
+引入依赖：
+```java
+<dependency>
+    <groupId>com.github.LinYuanBaoBao</groupId>
+    <artifactId>http-proxy-servlet</artifactId>
+    <version>1.0.0-RELEASE</version>
+</dependency>
+```
+
 ### 在 SpringBoot 中使用
 
 > 本示例你可以从 `http-proxy-servlet-example-http` 中获取
