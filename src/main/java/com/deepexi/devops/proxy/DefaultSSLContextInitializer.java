@@ -7,11 +7,6 @@ import java.security.cert.X509Certificate;
 
 /**
  * 实现了 {@link SSLContextInitializer} 接口，提供了默认的 SSLContext 上下文对象初始化。
- * <ul>
- * 该类所创建的 SSLContext 上下文对象具有以下几个特点：
- * <li>跳过服务端的证书进行验证</li>
- * </ul>
- * 你也可以继承该类重新其相应的方法来实现定制化。
  *
  * @author linyuan - linyuan@deepexi.com
  * @since 2019-12-18
@@ -66,9 +61,9 @@ public class DefaultSSLContextInitializer implements SSLContextInitializer {
 
     /**
      * 获取密钥管理器，用于管理请求目标服务时的证书
-     *
      * @param requestContext 请求上下文
      * @return KeyManager 数组对象
+     * @throws Exception 错误异常
      */
     protected KeyManager[] loadKeyStoreManager(RequestContext requestContext) throws Exception {
         KeyStoreModel keyStoreModel = keyStoreLoader.loadKeyStoreModel(requestContext);
