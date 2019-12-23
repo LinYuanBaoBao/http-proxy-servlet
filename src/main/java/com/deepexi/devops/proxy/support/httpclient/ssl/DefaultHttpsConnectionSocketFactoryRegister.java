@@ -1,5 +1,6 @@
 package com.deepexi.devops.proxy.support.httpclient.ssl;
 
+import com.deepexi.devops.proxy.RequestContext;
 import com.deepexi.devops.proxy.SSLContextInitializer;
 import lombok.Data;
 import org.apache.http.config.Registry;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 默认的 HTTPS Socket 连接工厂注入器
+ *
  * @author linyuan - linyuan@deepexi.com
  * @since 2019-12-19
  */
@@ -27,9 +29,9 @@ public class DefaultHttpsConnectionSocketFactoryRegister implements HttpsConnect
     }
 
     @Override
-    public Registry<ConnectionSocketFactory> registry(HttpServletRequest request) {
+    public Registry<ConnectionSocketFactory> registry(RequestContext requestContext) {
         SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(
-                sslContextInitializer.init(request),
+                sslContextInitializer.init(requestContext),
                 getSupportProtocol(),
                 null,
                 hostnameVerifier);

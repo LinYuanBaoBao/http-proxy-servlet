@@ -30,11 +30,9 @@ public class HttpsClientProxyInitHandler extends HttpClientProxyInitHandler {
 
     @Override
     public Proxy initProxy(RequestContext requestContext) {
-        HttpServletRequest request = requestContext.getRequest();
-
         HttpClientBuilder builder = HttpClientBuilder.create();
         if (requestContext.getScheme()== Scheme.HTTPS) {
-            builder.setConnectionManager(new BasicHttpClientConnectionManager(register.registry(request)));
+            builder.setConnectionManager(new BasicHttpClientConnectionManager(register.registry(requestContext)));
         }
 
         CloseableHttpClient httpClient = builder
