@@ -59,4 +59,33 @@
         </dependency>
     </dependencies>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/LinYuanBaoBao/http-proxy-servlet</url>
+        <connection>https://github.com/LinYuanBaoBao/http-proxy-servlet.git</connection>
+        <developerConnection>https://github.com/LinYuanBaoBao</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>LinYuanBaoBao</name>
+            <email>765371578@qq.com</email>
+            <url>https://github.com/LinYuanBaoBao</url>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
 </project>
