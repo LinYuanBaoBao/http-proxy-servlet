@@ -4,6 +4,7 @@ import com.deepexi.devops.proxy.AbstractProxy;
 import com.deepexi.devops.proxy.FullHttpRequest;
 import com.deepexi.devops.proxy.RequestContext;
 import com.deepexi.devops.proxy.exception.*;
+import lombok.Getter;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
@@ -34,9 +35,10 @@ import static org.apache.http.protocol.HTTP.TRANSFER_ENCODING;
  */
 public class HttpClientProxy extends AbstractProxy {
 
+    @Getter
     private CloseableHttpClient httpClient;
-    private FullHttpRequest proxyRequest;
-    private HttpResponse proxyResponse;
+    protected FullHttpRequest proxyRequest;
+    protected HttpResponse proxyResponse;
 
     public HttpClientProxy(RequestContext requestContext, CloseableHttpClient httpClient) {
         super(requestContext);
