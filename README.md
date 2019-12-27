@@ -11,7 +11,7 @@ Http-Proxy-Servlet 能提供流量转发功能，并且支持 HTTPS 双向认证
 <dependency>
     <groupId>com.github.LinYuanBaoBao</groupId>
     <artifactId>http-proxy-servlet</artifactId>
-    <version>1.0.1-RELEASE</version>
+    <version>1.0.2-RELEASE</version>
 </dependency>
 ```
 
